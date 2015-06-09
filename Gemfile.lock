@@ -59,6 +59,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -157,6 +159,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  email_validator
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.1)
