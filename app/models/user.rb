@@ -8,13 +8,13 @@ class User < ActiveRecord::Base
   has_many :comments  
 
   #VALIDATIONS 
-  #username and email have to be unique
-  #bio has to have a character limit
-  #websites have to have specific format 
+  #websites have to have specific format (SCOPE 2)
+  #role (admin, user by default) (SCOPE 1 OR 2) 
 
   validates :email, :username, uniqueness: true  
   validates :bio, length: { maximum: 500,
     too_long: "%{count} characters is the maximum allowed" }
-  validates :my_email_attribute, :email => true  
+  # validates :email => true  
+   
 end   
 

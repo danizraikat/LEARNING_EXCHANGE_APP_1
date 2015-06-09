@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'devise' 
-gem 'email_validator'
+gem 'email_validator' #not sure this gem is needed when using devise
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
