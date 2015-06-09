@@ -7,3 +7,5 @@ user1 = User.create!(username: "gerrymathe", email: "gerry@gerry.com", password:
 note1 = Note.create!(user_id:1, content: "This is the first note on the website")
 
 comment1 = Comment.create!(user_id: 1, note_id: 1, content: "First comment")
+
+tag1 = Tag.create!(title: "ruby") 

@@ -19,6 +19,20 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+
+  <div class="field">
+    <%= label_tag :tags %>
+    <ul>
+    <% Tag.all.each do |tag| %>
+      <li>
+        <% is_checked = @note.tag_ids.include? tag.id %>
+        <%= check_box_tag "note[tags][]", tag.id, is_checked %>
+        <%= tag.title %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
