@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   root "home#index"  
-  resources :comments
   resources :tags
   resources :notes
   devise_for :users       
