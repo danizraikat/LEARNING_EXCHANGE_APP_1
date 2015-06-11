@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :comments
   root "home#index"  
   resources :tags
   resources :notes
