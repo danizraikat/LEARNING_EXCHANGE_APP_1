@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150608172534) do
 
-  create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "note_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "notes", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
@@ -32,6 +24,9 @@ ActiveRecord::Schema.define(version: 20150608172534) do
     t.integer "note_id", null: false
     t.integer "tag_id",  null: false
   end
+
+  add_index "notes_tags", ["note_id", "tag_id"], name: "index_notes_tags_on_note_id_and_tag_id"
+  add_index "notes_tags", ["tag_id", "note_id"], name: "index_notes_tags_on_tag_id_and_note_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "title"
