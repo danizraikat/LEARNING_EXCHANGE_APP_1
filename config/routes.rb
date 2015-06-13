@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :comments
   root "home#index"  
+  resources :comments
   resources :tags
   resources :notes
-  devise_for :users       
+  devise_for :users   
+  resources :users, only: [:index, :show]    
    
 end
 

@@ -14,4 +14,3 @@ tag1 = Tag.create!(title: "ruby")
 tag2 = Tag.create!(title: "database")     
 
 
-
