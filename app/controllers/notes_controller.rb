@@ -5,13 +5,13 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     @notes = Note.all
+    @note = Note.new     
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
-    @comment = Comment.new
-    @user = User.new 
+    @comment = Comment.new   
   end
 
   # GET /notes/new
