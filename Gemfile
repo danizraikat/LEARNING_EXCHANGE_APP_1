@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'devise' 
 gem 'email_validator' #not sure this gem is needed when using devise
+gem 'foundation-rails' 
 
 
 
