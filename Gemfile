@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
+
 gem 'devise' 
 gem 'email_validator' #not sure this gem is needed when using devise
 gem 'foundation-rails' 
+
+gem 'omniauth', '1.2.2'
+gem 'omniauth-github', '1.1.2'      
 
 
 
