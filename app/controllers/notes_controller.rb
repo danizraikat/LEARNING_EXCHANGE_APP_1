@@ -28,6 +28,9 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.new(note_params)
 
+    note_tags = params[:note].delete(:tags)
+    @note.tag_ids = note_tags   
+
     respond_to do |format|
       if @note.save
         format.html { redirect_to notes_url, notice: 'Note was successfully created.' }
