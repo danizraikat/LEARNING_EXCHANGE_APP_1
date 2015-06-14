@@ -16,13 +16,16 @@
 </p>
 
 <ul>
+  <h2> Comments </h2>
   <% @note.comments.each do |comment| %>
-    <li><%= comment.user.username %></li>          
-    <li><%= comment.created_at %></li>
-    <li><%= comment.content %></li>
+    <h3><%= comment.user.username %></h3>          
+    <h5><%= comment.created_at %></h5>
+    <p><%= comment.content %></p>
+    <li><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
 
+<h2> Create Comment </h2>
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
