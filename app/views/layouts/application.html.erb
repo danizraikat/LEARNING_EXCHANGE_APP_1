@@ -13,8 +13,39 @@
   </head>
 
   <body>
+    <div class="">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1 class="h1-navbar"><a href="/">BUNDLE</a></h1>
+          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-    <%= yield %>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if user_signed_in? %>
+              <li><%= link_to current_user.first_name, user_path(current_user)%></li>
+              <li><%= link_to "Edit", edit_user_registration_path(current_user) %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path() %></li>
+              <li><%= link_to "Join", new_user_registration_path() %></li>
+            <% end %>
+          </ul>
+
+          <!-- Left Nav Section --> 
+          <ul class="left-nav-section">
+            <li class="tests-navbar"><%= link_to "Notes", notes_path %> 
+            <li class="test-name-navbar"><%= link_to "Tags", tags_path %></li>
+          </ul>      
+        </section>
+      </nav>
+    </div>
+
+    <%= yield %>                  
 
   </body>
 </html>

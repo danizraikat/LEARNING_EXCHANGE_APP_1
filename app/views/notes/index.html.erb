@@ -14,8 +14,9 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.user_id %></td>
+        <td><%= note.user.username %></td>          
         <td><%= note.content %></td>
+        <td><%= note.created_at %></td>
         <td><%= link_to 'Show', note %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>
         <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
