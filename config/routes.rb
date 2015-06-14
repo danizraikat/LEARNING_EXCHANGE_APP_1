@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "notes#index"  
+  # root "notes#index"  
+  root 'static_pages#home'
+  get 'static_pages/about'           
   resources :comments
   resources :tags
   resources :notes

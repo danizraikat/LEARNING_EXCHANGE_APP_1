@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
         user = User.new(
           first_name: auth.extra.raw_info.first_name,
           # image: auth.info.image || "",
-          email: auth.extra.raw_info.email, 
+          email: email ? email : "#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
         # If you use confirmable module 
