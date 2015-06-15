@@ -15,7 +15,7 @@
     <% @users.each do |user| %>     
       <tr>
         <td><%= user.first_name %></td>       
-        <td><%= image_tag user.profile_image.url %></td> 
+        <td><%= image_tag user.profile_image.url %></td>   
         <td><%= user.last_name %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
