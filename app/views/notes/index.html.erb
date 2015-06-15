@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @notes.each do |note| %>
+    <% @notes.reverse_each do |note| %>
       <tr>
         <td><%= image_tag note.user.profile_image.url %></td>    
         <td><%= note.user.username %></td>          
