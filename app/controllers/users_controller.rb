@@ -10,6 +10,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
   end
 
+  private 
+    def user_params
+      params.require(:user).permit(:profile_image, :remote_profile_image_url)
+    end
+
   #HOW TO EDIT THIS CODE SO THAT IT RELATES TO USER IMAGES?
   # private
   #   def image_params

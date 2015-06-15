@@ -14,12 +14,21 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
+        <td><%= image_tag note.user.profile_image.url %></td>    
         <td><%= note.user.username %></td>          
         <td><%= note.content %></td>
         <td><%= note.created_at %></td>
         <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can? :update, note %>
+            <%= link_to 'Edit', edit_note_path(note) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can? :destroy, note %>
+            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

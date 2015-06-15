@@ -18,10 +18,20 @@
 <ul>
   <h2> Comments </h2>
   <% @note.comments.each do |comment| %>
-    <h3><%= comment.user.username %></h3>          
+    <h3><%= comment.user.username %></h3>   
+    <p><%= image_tag comment.user.profile_image.url %><p>                           
     <h5><%= comment.created_at %></h5>
     <p><%= comment.content %></p>
-    <li><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li>
+      <% if can? :update, comment %>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+      <% end %>
+    </li>
+    <li>
+      <% if can? :destroy, comment %>
+        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
