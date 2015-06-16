@@ -1,76 +1,75 @@
-<p id="notice"><%= notice %></p>
+<body>
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Notes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notes.reverse_each do |note| %> 
-      <tr>
-        <td><%= image_tag note.user.profile_image.url %></td>    
-        <td><%= note.user.username %></td>          
-        <td><%= note.content %></td>
-        <td><%= note.created_at %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td>
-          <% if can? :update, note %>
-            <%= link_to 'Edit', edit_note_path(note) %>
-          <% end %>
-        </td>
-        <td>
-          <% if can? :destroy, note %>
-            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= form_for(@note) do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
-
-      <ul>
-      <% @note.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="notes-index-left">
+    <ul class="notes-index-ul">
+      <% @notes.reverse_each do |note| %> 
+        <button class="notes-index-button">
+          <li><%= image_tag note.user.profile_image.url %></li>    
+          <li><%= note.user.username %></li>      
+          <li><%= note.content %></li>
+          <li><%= note.created_at %></li>
+          <li><%= link_to 'Comment', note %></li>
+            <% if can? :update, note %>
+              <%= link_to 'Edit', edit_note_path(note) %>
+            <% end %>
+            <% if can? :destroy, note %>
+              <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </li>
+        </button>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
 
-  <div class="field">
-    <%= f.label "New Note" %><br>
-    <%= f.text_area :content %>   
+    <br>
+
+    <%= form_for(@note) do |f| %>
+      <% if @note.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+          <ul>
+          <% @note.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field-new-note">
+        <%= f.label "Add a new note", :class => 'new-note' %><br>
+        <%= f.text_area :content %>   
+      </div>
+
+      <div class="field">
+        <%= label_tag :tags %>
+        <ul>
+        <% Tag.all.each do |tag| %>
+          <li>
+            <% is_checked = @note.tag_ids.include? tag.id %>
+            <%= check_box_tag "note[tags][]", tag.id, is_checked %>
+            <%= tag.title %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= label_tag :tags %>
-    <ul>
-    <% Tag.all.each do |tag| %>
-      <li>
-        <% is_checked = @note.tag_ids.include? tag.id %>
-        <%= check_box_tag "note[tags][]", tag.id, is_checked %>
-        <%= tag.title %>
-      </li>
-    <% end %>
+  <div class="notes-index-right">
+    <ul class="notes-index-users-ul">
+      <% @users.each do |user| %>   
+        <button class="notes-index-users-button"><%= link_to 'Show', user %>    
+          <li><%= image_tag user.profile_image.url %></li>
+          <li><%= user.first_name %><%= user.last_name %></li>                  
+        </button>
+      <% end %>
     </ul>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-
+</body>
 

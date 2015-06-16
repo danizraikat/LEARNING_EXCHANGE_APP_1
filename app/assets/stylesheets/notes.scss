@@ -5,5 +5,51 @@
 img {
   width: 45px;
   height: 45px;
-  border: 1px solid #6B1229;
+  
+  border-radius: 5px;
 }
+
+.notes-index-ul {
+  margin-left: 5%;
+}
+
+.notes-index-button {
+  width: 400px;
+  list-style-type: none; 
+  margin: 10px;
+}
+
+.new-note {
+  color: #FFFFFF;
+}
+
+.notes-index-left {
+  float: left;  
+  width: 75%;
+}
+
+.notes-index-right {
+  float: right; 
+  width: 15%;
+  margin-right: 6%; 
+  margin-top: 10px;
+}
+
+.field-new-note {
+  width: 30%;
+}
+
+.notes-index-users-button {
+  width: 200px;
+  margin: 0px;
+  margin-right: 10px;
+  border: 0.5px solid #4C4C4C; 
+  list-style-type: none; 
+}
+
+
+
+
+
+
+

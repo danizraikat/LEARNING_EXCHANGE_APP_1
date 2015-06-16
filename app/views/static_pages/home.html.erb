@@ -1,15 +1,20 @@
+<body class="home">
+  
+  <div class="div-logo-home"> 
+    <h1 class="home-h1"> BUNDLE </h1>
+    <h3 class="home-h3-tagline"> Tagline </h3>
+  </div>
 
-<div class="div-logo-home"> 
-  <h1 class="home-h1"> BUNDLE </h1>
-  <h3 class="home-h3-tagline"> Tagline </h3>
-</div>
+  <div class="div-intro-home">    
+    <p class="home-intro-p">
+      <li class="home-intro-li"> Bundle is for <span class="h-i-li">developers</span>.</li>     
+      <li class="home-intro-li"> It provides a simple interface for us to communicate daily discoveries about code and things that come along with it in the form of short <span class="h-i-li">notes</span> that are easy to organize and find. </li>
+      <li class="home-intro-li"> To learn more read the About page or simply register and start using it. <span class="h-i-li"> Enjoy. </span> </li>
+    </p>
+    <div class="home-buttons">
+      <button class="home-login-b"><%= link_to "Login", new_user_session_path(), :class => 'home-login' %></button>
+      <button class="home-signup-b"><%= link_to "Join us", new_user_registration_path(), :class => 'home-signup' %></button>   
+    </div>
+  </div>
 
-<div class="div-intro-home">
-  <p class="home-intro-p">
-    Bundle is for developers. It provides a simple interface for us to communicate new discoveries in the form of... 
-    Let's use Bundle to exchange knowledge and learn from each other. 
-  </p>
-</div>
-
-<button class="home-login"> Log in  </button>
-<button class="home-signup"> Sign up  </button>
+</body>

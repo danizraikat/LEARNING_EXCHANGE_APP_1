@@ -29,13 +29,13 @@
           <!-- Right Nav Section -->
           <ul class="right">
             <% if user_signed_in? %>
-              <li><%= image_tag current_user.profile_image.url %></li>
+              <li><%= image_tag current_user.profile_image.url, :class => 'image-nav-bar' %></li>
               <li><%= link_to current_user.first_name, user_path(current_user)%></li>
               <li><%= link_to "Edit", edit_user_registration_path(current_user) %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Login", new_user_session_path() %></li>
-              <li><%= link_to "Join", new_user_registration_path() %></li>
+              <li><%= link_to "Join us", new_user_registration_path() %></li>
             <% end %>
           </ul>   
 

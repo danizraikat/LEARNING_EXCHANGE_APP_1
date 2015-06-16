@@ -16,6 +16,24 @@
 
  */
 
-.top-bar, .tests-navbar, .test-name-navbar {
+/*.top-bar, .tests-navbar, .test-name-navbar {
   background-color: #E6E6E6; 
-} 
+} */
+
+/*.top-bar {
+  opacity: 0.4;
+}*/
+
+.image-nav-bar {
+  width: 62px;
+  height: 62px;
+  border: 0px;
+  border-radius: 0px;
+}
+
+
+
+
+
+
+

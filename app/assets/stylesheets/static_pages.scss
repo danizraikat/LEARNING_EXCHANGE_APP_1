@@ -1,3 +1,94 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//--HOME PAGE 
+body {
+  background-color: #4C4C4C;
+}
+
+.div-logo-home {
+  width: 50%;
+  float: left;
+  margin-top: 15%;
+  text-align: center;
+}
+
+.div-intro-home {
+  width: 50%;
+  float: right;  
+  margin-top: 5%;  
+  padding-right: 5%;
+  padding-left: 3%;
+}
+
+.home-h1, .home-h3-tagline, .home-intro-li {
+  color: #FFFFFF;
+  font-family: Courier;
+}
+
+.home-h1 {
+  font-size: 100px;
+}
+
+.home-intro-li {
+  font-size: 28px;
+  line-height: 35px;   
+  list-style-type: none; 
+}
+
+.h-i-li {
+  color: #E6E65C;
+  // color: #CCCC52; 
+}
+
+.home-buttons {
+  margin-left: 5%;
+} 
+
+.home-login-b, .home-signup-b {
+  
+  border: 3px solid #FFFFFF; 
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 8px;
+  color: #FFFFFF;
+}
+
+.home-login-b {
+  background-color: #00B85C;  
+}
+
+.home-signup-b {
+  background-color: #00B85C;  
+}
+
+.home-login-b:hover {
+  background-color: #00A352;
+}
+
+.home-signup-b:hover {
+  background-color: #00A352;  
+}
+
+.home-login, .home-signup {
+  color: #FFFFFF;
+  font-family: Courier;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.home-login:hover, .home-signup:hover {
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+
