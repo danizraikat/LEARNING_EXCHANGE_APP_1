@@ -23,9 +23,19 @@ img {
   color: #FFFFFF;
 }
 
+.new-note-index {
+  margin-left: 5%;
+}
+
+.error_explanation, .field-new-note, .field-new-note-tags, .actions {
+  margin-left: 10px; 
+}
+
 .notes-index-left {
+   
   float: left;  
   width: 75%;
+  margin-top: 10px; 
 }
 
 .notes-index-right {
@@ -47,6 +57,26 @@ img {
   list-style-type: none; 
 }
 
+.field-new-note {
+  width: 820px;
+}
+
+.new-note-text-area {
+
+}
+
+.tag-notes-index {
+  list-style-type: none;  
+}
+
+.tiny {
+  height: 25px;
+}
+
+
+.actions-create-note {
+  margin: 10px;
+}
 
 
 

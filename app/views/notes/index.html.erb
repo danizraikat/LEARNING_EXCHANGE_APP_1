@@ -2,6 +2,44 @@
   <p id="notice"><%= notice %></p>
 
   <div class="notes-index-left">
+    <div class="new-note-index">
+      <%= form_for(@note) do |f| %>
+        <% if @note.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+            <ul>
+            <% @note.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field-new-note">          
+          <%= f.text_area :content, placeholder: "New note", :class => 'new-note-text-area' %>   
+        </div>
+
+        <div class="tags-and-submit">
+          <div class="field-new-note-tags">
+            <%= label_tag :tags %>
+            <p class="tag-notes-index">
+              <% Tag.all.each do |tag| %>
+                
+                  <% is_checked = @note.tag_ids.include? tag.id %>
+                  <%= check_box_tag "note[tags][]", tag.id, is_checked %>
+                  <button class="tiny"><%= tag.title %></button>
+                
+              <% end %>
+            </p>
+          </div>
+          <div class="actions-create-note">
+            <%= f.submit %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
     <ul class="notes-index-ul">
       <% @notes.reverse_each do |note| %> 
         <button class="notes-index-button">
@@ -20,44 +58,7 @@
         </button>
       <% end %>
     </ul>
-
     <br>
-
-    <%= form_for(@note) do |f| %>
-      <% if @note.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
-
-          <ul>
-          <% @note.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="field-new-note">
-        <%= f.label "Add a new note", :class => 'new-note' %><br>
-        <%= f.text_area :content %>   
-      </div>
-
-      <div class="field">
-        <%= label_tag :tags %>
-        <ul>
-        <% Tag.all.each do |tag| %>
-          <li>
-            <% is_checked = @note.tag_ids.include? tag.id %>
-            <%= check_box_tag "note[tags][]", tag.id, is_checked %>
-            <%= tag.title %>
-          </li>
-        <% end %>
-        </ul>
-      </div>
-
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
   </div>
 
   <div class="notes-index-right">
