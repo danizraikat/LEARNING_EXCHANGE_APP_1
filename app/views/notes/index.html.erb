@@ -1,5 +1,5 @@
 <body>
-  <p id="notice"><%= notice %></p>
+  <!-- <p id="notice"><%= notice %></p> -->
 
   <div class="notes-index-left">
     <div class="new-note-index">
@@ -42,20 +42,41 @@
 
     <ul class="notes-index-ul">
       <% @notes.reverse_each do |note| %> 
-        <button class="notes-index-button">
-          <li><%= image_tag note.user.profile_image.url %></li>    
-          <li><%= note.user.username %></li>      
-          <li><%= note.content %></li>
-          <li><%= note.created_at %></li>
-          <li><%= link_to 'Comment', note %></li>
-            <% if can? :update, note %>
-              <%= link_to 'Edit', edit_note_path(note) %>
-            <% end %>
-            <% if can? :destroy, note %>
-              <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </li>
+    
+        <button class="notes-index-button">   
+          
+          
+            <ul class="ul-row1-notes-index"> 
+              <li class="li-notes-profile-img"><%= image_tag note.user.profile_image.url, :class => 'notes-profile-img' %></li>  
+              <li class="li-notes-user-name"><%= note.user.first_name %></li>
+              <li class="li-notes-user-name"><%= note.user.last_name %></li>
+              <li class="li-notes-user-username"><%= link_to note.user.username, note.user %></li>              
+              
+            </ul>
+
+            <div class="row2-notes-content">
+              <p class="p-notes-content"><%= note.content %></p>      
+            </div>
+
+            <div class="note-created-at">
+              <li><%= note.created_at %></li>
+            </div>
+            
+            <ul>
+              <li class="c-n-index"><%= link_to 'Comment', note, :class => 'c-e-d-n-index' %></li>
+              <% if can? :update, note %>
+              <li class="c-e-d-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'c-e-d-n-index' %></li>
+              <% end %>
+              <% if can? :destroy, note %>
+              <li class="c-e-d-n-index"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'c-e-d-n-index' %></li>
+              <% end %>
+            </ul>
+          
+          
+
+         
         </button>
+    
       <% end %>
     </ul>
     <br>
