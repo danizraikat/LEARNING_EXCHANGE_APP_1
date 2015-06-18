@@ -21,7 +21,7 @@
         </div>
 
         <div class="tags-and-submit">
-          <div class="field-new-note-tags">
+          <!-- <div class="field-new-note-tags">
             <%= label_tag :tags %>
             <p class="tag-notes-index">
               <% Tag.all.each do |tag| %>
@@ -32,7 +32,7 @@
                 
               <% end %>
             </p>
-          </div>
+          </div> -->
           <div class="actions-create-note">
             <%= f.submit %>
           </div>
@@ -43,37 +43,32 @@
     <ul class="notes-index-ul">
       <% @notes.reverse_each do |note| %> 
     
-        <button class="notes-index-button">   
-          
-          
+        <button class="notes-index-button">                       
+
             <ul class="ul-row1-notes-index"> 
               <li class="li-notes-profile-img"><%= image_tag note.user.profile_image.url, :class => 'notes-profile-img' %></li>  
-              <li class="li-notes-user-name"><%= note.user.first_name %></li>
-              <li class="li-notes-user-name"><%= note.user.last_name %></li>
-              <li class="li-notes-user-username"><%= link_to note.user.username, note.user %></li>              
-              
+              <li class="li-notes-user-first-name"><%= note.user.first_name %></li>
+              <li class="li-notes-user-last-name"><%= note.user.last_name %></li>
+              <li class="li-notes-user-username"><%= link_to note.user.username, note.user, :class => 'link-notes-user-username' %></li>                
             </ul>
 
             <div class="row2-notes-content">
               <p class="p-notes-content"><%= note.content %></p>      
             </div>
 
-            <div class="note-created-at">
-              <li><%= note.created_at %></li>
+            <div class="row3-notes-created-at">
+              <li class="li-notes-created-at"><%= note.created_at %></li>
             </div>
             
-            <ul>
-              <li class="c-n-index"><%= link_to 'Comment', note, :class => 'c-e-d-n-index' %></li>
+            <ul class="ul-row4-notes-index">
+              <li class="li-c-n-index"><%= link_to 'Comment', note, :class => 'link-c-n-index' %></li>
               <% if can? :update, note %>
-              <li class="c-e-d-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'c-e-d-n-index' %></li>
+              <li class="li-e-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'link-e-n-index' %></li>
               <% end %>
               <% if can? :destroy, note %>
-              <li class="c-e-d-n-index"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'c-e-d-n-index' %></li>
+              <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
               <% end %>
             </ul>
-          
-          
-
          
         </button>
     
@@ -83,12 +78,21 @@
   </div>
 
   <div class="notes-index-right">
-    <ul class="notes-index-users-ul">
+
+    <li class="bundle-users">Bundle has</li>
+  
+    <ul class="ul-users-n-index">
       <% @users.each do |user| %>   
-        <button class="notes-index-users-button"><%= link_to 'Show', user %>    
-          <li><%= image_tag user.profile_image.url %></li>
-          <li><%= user.first_name %><%= user.last_name %></li>                  
+
+        <button class="button-users-n-index">    
+          
+          <ul class="ul-row1-button-users-n-index">
+            
+            <li class="li-users-image-n-index"><%= image_tag user.profile_image.url, :class => "link-users-image-n-index" %></li>
+            <li class="li-users-username-n-index"><%=link_to user.username, user, :class => "link-users-username-n-index" %></li>    
+            
         </button>
+
       <% end %>
     </ul>
   </div>

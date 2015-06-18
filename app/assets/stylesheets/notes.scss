@@ -2,6 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//NEW NOTE
+
+.field-new-note, .new-note-text-area {
+  width: 400px;
+}
+
+.new-note {
+  color: #FFFFFF;
+}
+
+.new-note-index {
+  margin-left: 5%;
+}
+
+.error_explanation, .field-new-note, .field-new-note-tags, .actions {
+  margin-left: 10px; 
+}
+
+.tiny {
+  height: 25px;
+}
+
+.actions-create-note {
+  margin: 10px;
+}
+
+
 //NOTES LIST
 .notes-index-ul {
   margin-left: 5%;
@@ -17,6 +44,10 @@
   // border: 1px solid #CCCC52;
 }
 
+.notes-index-button:hover {
+  background-color: #808080;   
+}
+
 //INSIDE NOTE BUTTON
 .ul-row1-notes-index {
   // background-color: #666666;
@@ -26,6 +57,10 @@
   margin-left: 15px;      
   margin-bottom: 0px;
 }
+
+  .li-notes-profile-img, .li-notes-user-first-name, .li-notes-user-last-name, .li-notes-user-username {
+    display: inline;   
+  }
   
   .li-notes-profile-img, .c-n-index {
     margin-left: 0px;
@@ -38,10 +73,26 @@
       height: 50px; 
     }
 
-  .li-notes-user-username {
-    color: #E6E65C; 
-  }
+  .li-notes-user-first-name {
+    padding-left: 5px; 
+  }   
 
+    .link-notes-user-username:link {
+      color: #E6E65C;  
+    }   
+
+    .link-notes-user-username:visited {
+      color: #E6E65C;  
+    }   
+
+    .link-notes-user-username:hover {
+      background-color: transparent; 
+      color: #CCCC52;    
+    }
+
+    .link-notes-user-username:active {
+      color: #E6E65C;  
+    }   
 
 .row2-notes-content {  
   width: 360px; 
@@ -50,6 +101,7 @@
   border-radius: 0px;
   margin-left: 15px;      
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
   .p-notes-content{
@@ -61,6 +113,54 @@
     padding-left: 8px; 
   }
 
+.row3-notes-created-at {
+  width: 360px; 
+  margin-left: 15px;      
+  margin-top: -20px;   
+}
+
+  .li-notes-created-at {
+    font-family: Courier;
+    font-size: 10px;
+    text-align: left; 
+    background-color: #CCCCCC;
+    color: #1A1A1A; 
+    padding: 8px;
+    padding-left: 8px;  
+  }
+
+.ul-row4-notes-index {
+  text-align: left;
+  margin-top: 3px; 
+}
+
+  .li-c-n-index, .li-e-n-index, .li-d-n-index {
+    display: inline;      
+  }
+
+  .li-e-n-index, .li-d-n-index {
+    padding-left: 5px; 
+  }
+
+    .link-c-n-index:link, .link-e-n-index:link, .link-d-n-index:link {
+      color: #CCCCCC;  
+    }   
+
+    .link-c-n-index:visited, .link-e-n-index:visited, .link-d-n-index:visited {
+      color: #CCCCCC;  
+    }   
+
+    .link-c-n-index:hover, .link-e-n-index:hover, .link-d-n-index:hover {
+      background-color: transparent; 
+      color: #CCCC52;        
+    }
+
+    .link-c-n-index:active, .link-e-n-index:active, .link-d-n-index:active {
+      color: #CCCCCC;  
+    }  
+
+
+
 img {
   width: 45px;
   height: 45px;
@@ -68,26 +168,6 @@ img {
   border-radius: 0px;
 }
 
-
-
-
-
-
-.notes-index-button:hover {
-  background-color: #808080;   
-}
-
-.new-note {
-  color: #FFFFFF;
-}
-
-.new-note-index {
-  margin-left: 5%;
-}
-
-.error_explanation, .field-new-note, .field-new-note-tags, .actions {
-  margin-left: 10px; 
-}
 
 .notes-index-left {
    
@@ -103,41 +183,84 @@ img {
   margin-top: 10px;
 }
 
-.field-new-note {
-  width: 30%;
+
+//USERS LIST// 
+
+.notes-index-right {
+  margin-top: 69px;
 }
 
-.notes-index-users-button {
+.bundle-users {
+  // font-family: Helvetica; 
+  font-size: 26px; 
+  list-style-type: none; 
+  color: #CCCCCC; 
+  margin-left: 18px; 
+  margin-bottom: 30px;
+}
+
+.button-users-n-index {    
   width: 200px;
+  height: 45px;
   margin: 0px;
   margin-right: 10px;
-  border: 0.5px solid #4C4C4C; 
+  padding: 0px;
+  background-color: #666666;     
   list-style-type: none; 
 }
 
-.field-new-note {
-  width: 820px;
+.button-users-n-index {  
+  background-color: #666666;      
 }
 
-.new-note-text-area {
-
+.button-users-n-index:visited {  
+  background-color: #666666;      
 }
+
+.button-users-n-index:hover {  
+  background-color: #808080;      
+}
+
+.button-users-n-index:active {  
+  background-color: #666666;      
+}
+
+
+.ul-row1-button-users-n-index {
+  text-align: left; 
+  padding: 0px;
+  margin-left: 15px; 
+}
+
+.li-users-image-n-index, .li-users-username-n-index {
+  display: inline;       
+}
+
+.li-users-username-n-index {
+  padding-left: 5px;  
+}  
+
+  .link-users-username-n-index:link {
+    color: #E6E65C;  
+  }   
+
+  .link-users-username-n-index:visited {
+    color: #E6E65C;  
+  }   
+
+  .link-users-username-n-index:hover {
+    background-color: transparent; 
+    color: #CCCC52;    
+  }
+
+  .link-users-username-n-index:active {
+    color: #E6E65C;  
+  }    
+
 
 .tag-notes-index {
   list-style-type: none;  
 }
-
-.tiny {
-  height: 25px;
-}
-
-
-.actions-create-note {
-  margin: 10px;
-}
-
-
-
 
 
 .notes-profile-img {
@@ -148,26 +271,9 @@ img {
 
 
 
-table {
-  background-color: transparent; 
-  border: 0px;
-  margin-left: -10px;
-  width: 360px;
-}
 
-table:hover {
-  background-color: transparent;    
-}
 
-.c-e-d-n-index {
-  background-color: #666666;
-  color: red; 
-}
 
-li {
-  list-style-type: none;
-  display: inline;   
-}
 
 
 

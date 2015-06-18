@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :edit, :update, :destroy] 
- 
+  before_action :set_note, only: [:show, :edit, :update, :destroy]  
    
   # GET /notes
   # GET /notes.json
@@ -79,4 +78,5 @@ class NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:user_id, :content)
     end
+
 end
