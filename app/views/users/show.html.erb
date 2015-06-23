@@ -1,27 +1,117 @@
-<h1><%= @user.first_name %><%= @user.last_name %></h1>
-<li><%= @user.username %></li>
-<p><%= @user.bio %></p>       
+<body>
 
+<!-- USER PROFILE -->
+<div class="user-profile">
+  
+  <div class="user-profile-image">
+    <li class="li-user-profile-img"><%= image_tag @user.profile_image.url, :class => 'user-profile-img' %></li>    
+  </div>
+  <div class="user-info">
+    <ul>
+      <h2 class="li-user-first-name"><%= @user.first_name %></h2>  
+      <h2 class="li-user-last-name"><%= @user.last_name %></h2>  
+      <h2 class="li-user-username"><%= @user.username %></h2>      
+      <p><%= @user.bio %></p>       
+    </ul>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="notes-index-left">
+  
+  <div class="new-note-index">
+    <%= form_for(@note) do |f| %>
+      <% if @note.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
 
-  <tbody>
-    <% @user.notes.each do |note| %>      
-      <tr>
-        <td><%= note.user.username %></td>          
-        <td><%= note.content %></td>
-        <td><%= note.created_at %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          <ul>
+          <% @note.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field-new-note">          
+        <%= f.text_area :content, placeholder: "New note", :class => 'new-note-text-area' %>   
+      </div>
+
+      <div class="tags-and-submit">
+        <!-- <div class="field-new-note-tags">
+          <%= label_tag :tags %>
+          <p class="tag-notes-index">
+            <% Tag.all.each do |tag| %>
+              
+                <% is_checked = @note.tag_ids.include? tag.id %>
+                <%= check_box_tag "note[tags][]", tag.id, is_checked %>
+                <button class="tiny"><%= tag.title %></button>
+              
+            <% end %>
+          </p>
+        </div> -->
+        <div class="actions-create-note">     
+          <%= f.submit %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <ul class="notes-index-ul">
+    <% @user.notes.reverse_each do |note| %> 
+  
+      <button class="notes-index-button">                       
+
+          <ul class="ul-row1-notes-index"> 
+            <li class="li-notes-profile-img"><%= image_tag note.user.profile_image.url, :class => 'notes-profile-img' %></li>  
+            <li class="li-notes-user-first-name"><%= note.user.first_name %></li>
+            <li class="li-notes-user-last-name"><%= note.user.last_name %></li>
+            <li class="li-notes-user-username"><%= link_to note.user.username, note.user, :class => 'link-notes-user-username' %></li>                
+          </ul>
+
+          <div class="row2-notes-content">
+            <p class="p-notes-content"><%= note.content %></p>      
+          </div>
+
+          <div class="row3-notes-created-at">
+            <li class="li-notes-created-at"><%= note.created_at %></li>
+          </div>
+          
+          <ul class="ul-row4-notes-index">
+            <li class="li-c-n-index"><%= link_to 'Comment', note, :class => 'link-c-n-index' %></li>
+            <% if can? :update, note %>
+            <li class="li-e-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'link-e-n-index' %></li>
+            <% end %>
+            <% if can? :destroy, note %>
+            <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
+            <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
+            <% end %>
+          </ul>
+       
+      </button>
+  
+    <% end %>
+  </ul>
+  <br>
+</div>  
+
+<div class="notes-index-right">
+
+  <li class="bundle-users">Bundle has</li>
+
+  <ul class="ul-users-n-index">
+    <% @users.each do |user| %>   
+
+      <button class="button-users-n-index">    
+        
+        <ul class="ul-row1-button-users-n-index">
+          
+          <li class="li-users-image-n-index"><%= image_tag user.profile_image.url, :class => "link-users-image-n-index" %></li>
+          <li class="li-users-username-n-index"><%=link_to user.username, user, :class => "link-users-username-n-index" %></li>    
+          
+      </button>
+
+    <% end %>
+  </ul>
+</div>
+   
+</body>

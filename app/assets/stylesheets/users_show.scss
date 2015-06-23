@@ -1,0 +1,28 @@
+.user-profile {
+  height: 150px;
+  background-color: #666666;
+  margin-left: 5%;  
+  margin-right: 5%;  
+  margin-top: 3%;  
+   
+}
+
+  .user-profile-image {
+    float: left;
+    list-style-type: none; 
+  }
+
+    .user-profile-img {
+      width: 150px;
+      height: 150px;
+    }
+
+.li-user-first-name, .li-user-last-name, .li-user-username {
+  display: inline;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.li-user-first-name, .li-user-last-name {
+  color: #FFFFFF;
+}

@@ -1,4 +1,4 @@
-<body>
+<body>    
   <!-- <p id="notice"><%= notice %></p> -->
 
   <div class="notes-index-left">
@@ -33,7 +33,7 @@
               <% end %>
             </p>
           </div> -->
-          <div class="actions-create-note">
+          <div class="actions-create-note">     
             <%= f.submit %>
           </div>
         </div>
@@ -67,6 +67,7 @@
               <% end %>
               <% if can? :destroy, note %>
               <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
+              <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
               <% end %>
             </ul>
          
