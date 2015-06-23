@@ -83,8 +83,8 @@
             <% end %>
             <% if can? :destroy, note %>
             <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
-            <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
             <% end %>
+            <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
           </ul>
        
       </button>
