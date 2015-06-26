@@ -1,10 +1,13 @@
-.user-profile {
+
+.user-profile {  
   height: 150px;
-  background-color: #666666;
-  margin-left: 5%;  
-  margin-right: 5%;  
+  // background-color: #666666;
+  // background-color: #808080; 
+  background-color: #FFFFFF;
+  margin-left: 5%;      
   margin-top: 3%;  
-   
+  width: 600px;  
+  float: left;
 }
 
   .user-profile-image {
@@ -17,22 +20,64 @@
       height: 150px;
     }
 
-  .user-bio {
-    float: right;
-  }
+.li-user-first-name {
+  font-family: Lucida Grande; 
+  display: inline;
+  margin-left: 13px;
+  line-height: 36px;
+  font-size: 24px;
+}
 
-.li-user-first-name, .li-user-last-name, .li-user-username {
+.li-user-last-name, .li-user-username {
+  font-family: Lucida Grande; 
   display: inline;
   margin-left: 10px;
-  font-size: 30px;
+  line-height: 36px;
+  font-size: 24px;
 }
 
 .li-user-first-name, .li-user-last-name {
-  color: #FFFFFF;
+  // color: #FFFFFF;
+  color: #808080;
+}
+
+.li-user-location {
+  font-size: 20px;
+  margin-left: 146px;
+  margin-top: -4px;
+  width: 400px;
 }
 
 .li-user-ga-course, .li-user-website, .li-user-github, .li-user-twitter {
   list-style-type: none;
-  color: #FFFFFF;
-  margin-left: 10px;
+  font-size: 10px;
+  // color: #FFFFFF;
+  color: #808080;
+  margin-left: 146px;
+  width: 400px;
 }
+
+.user-bio {
+  height: 150px;
+  background-color: #FFD119; 
+  
+  margin-right: 5%;      
+  margin-top: 3%;  
+  width: 551px;    
+  float: right;
+}
+  .li-user-bio {
+    font-family: Monaco;
+    // font-style: italic;  
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 24px;
+    margin-left: 15px;
+    
+    margin-right: 15px;
+    text-align: center; 
+    color: #4C4C4C;
+
+  }
+
+
