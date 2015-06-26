@@ -11,8 +11,15 @@
       <h2 class="li-user-first-name"><%= @user.first_name %></h2>  
       <h2 class="li-user-last-name"><%= @user.last_name %></h2>  
       <h2 class="li-user-username"><%= @user.username %></h2>      
-      <p><%= @user.bio %></p>       
+      <h4 class="li-user-location"><%= @user.location %></h4>
+      <li class="li-user-ga-course"><%= @user.ga_course %></li>
+      <li class="li-user-website"><%= @user.website_1 %></li>
+      <li class="li-user-github"><%= @user.website_2 %></li>
+      <li class="li-user-twitter"><%= @user.website_3 %></li>        
     </ul>
+    <div class="user-bio">
+      <p class="li-user-bio"><%= @user.bio %></p>             
+    </div>
   </div>
 </div>
 

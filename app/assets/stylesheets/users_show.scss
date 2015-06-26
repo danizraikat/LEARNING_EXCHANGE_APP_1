@@ -17,6 +17,10 @@
       height: 150px;
     }
 
+  .user-bio {
+    float: right;
+  }
+
 .li-user-first-name, .li-user-last-name, .li-user-username {
   display: inline;
   margin-left: 10px;
@@ -25,4 +29,10 @@
 
 .li-user-first-name, .li-user-last-name {
   color: #FFFFFF;
+}
+
+.li-user-ga-course, .li-user-website, .li-user-github, .li-user-twitter {
+  list-style-type: none;
+  color: #FFFFFF;
+  margin-left: 10px;
 }
