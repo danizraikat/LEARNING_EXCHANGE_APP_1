@@ -1,0 +1,109 @@
+.body-notes-show {
+  background-color: #CCCCCC;
+}
+
+.notes-show-button {
+  width: 600px;
+  list-style-type: none; 
+  margin: 10px;  
+  background-color: #E6E6E6;  
+  padding: 0px;
+  margin-left: 30%;
+  // border: 1px solid #CCCC52;
+}
+
+.notes-show-button:hover {
+  background-color: #E6E6E6;  
+}
+.comment-user-profile-img {
+  width: 30px;
+  height: 30px;
+}
+
+.row2-notes-content-show {  
+  width: 560px; 
+  // margin-left: 0px;
+  // margin-top: 20px;
+  border-top: 1px solid #CCCCCC;
+  border-radius: 0px;
+  margin-left: 15px;      
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.row3-notes-created-at-show {
+  width: 560px; 
+  margin-left: 15px;      
+  margin-top: -20px;   
+}
+
+.ul-row4-notes-index {
+  margin-right: 20px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-row-1, .li-comment-created-at, .comment-row-3 {
+  text-align: left;
+  list-style-type: none;
+}
+
+.li-comment-user-profile-image, .li-comment-user-first-name, .li-comment-user-last-name, .li-comment-user-username {
+  display: inline;
+  color: #4C4C4C;
+}
+
+.li-comment-user-first-name, .li-comment-user-last-name, .li-comment-user-username, .li-comment-content {
+  margin-top: 0px;
+}
+
+.li-comment-user-username {
+  color: #6685E0;  
+}
+
+.li-comment-content {
+  color: #4C4C4C;
+  font-family: Courier;
+  font-size: 12px;
+  margin-left: 14px;
+}
+
+.li-comment-created-at {
+  color: #4C4C4C; 
+  font-family: Courier;
+  font-size: 11px;
+  margin-left: 10px;
+  line-height: 25px;
+}
+
+.li-comment-user-profile-image {
+  margin-left: 10px;
+}
+
+.li-edit-comment, .li-destroy-comment {
+  display: inline;
+  list-style-type: none;
+  color: #4C4C4C; 
+  margin-left: 10px;
+  font-size: 11px;
+}
+
+
+//NEW COMMENT
+.field-new-comment {
+  margin-left: 25px;  
+  margin-right: 20px;  
+}
+
+.new-comment-text-area {
+  margin-left: 50px;
+}
+
+
+
+
+
+

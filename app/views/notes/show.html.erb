@@ -1,65 +1,97 @@
-<p id="notice"><%= notice %></p>
+<body class="body-notes-show">
 
-<p>
-  <strong>User:</strong>
-  <%= @note.user.username %>
-</p>
+<button class="notes-show-button">      
 
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
+  <!-- NOTE -->
 
-<p>
-  <strong>Tags:</strong>
-  <%= @note.tags.map{ |tag| "##{tag.title}"}.join(" ") %>
-</p>
+  <ul class="ul-row1-notes-index"> 
+    <li class="li-notes-profile-img"><%= image_tag @note.user.profile_image.url, :class => 'notes-profile-img' %></li>  
+    <li class="li-notes-user-first-name"><%= @note.user.first_name %></li>
+    <li class="li-notes-user-last-name"><%= @note.user.last_name %></li>
+    <li class="li-notes-user-username"><%= link_to @note.user.username, @note.user, :class => 'link-notes-user-username' %></li>                
+  </ul>
 
-<ul>
-  <h2> Comments </h2>
-  <% @note.comments.each do |comment| %>
-    <h3><%= comment.user.username %></h3>   
-    <p><%= image_tag comment.user.profile_image.url %><p>                           
-    <h5><%= comment.created_at %></h5>
-    <p><%= comment.content %></p>
-    <li>
-      <% if can? :update, comment %>
-        <%= link_to 'Edit', edit_comment_path(comment) %>
-      <% end %>
-    </li>
-    <li>
-      <% if can? :destroy, comment %>
-        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <div class="row2-notes-content-show">
+    <p class="p-notes-content"><%= @note.content %></p>      
+  </div>
 
-<h2> Create Comment </h2>
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row3-notes-created-at-show">
+    <li class="li-notes-created-at"><%= @note.created_at %></li>
+  </div>
+  
+  <ul class="ul-row4-notes-index">
+    <li class="li-c-n-index"><%= link_to 'Comment', @note, :class => 'link-c-n-index' %></li>
+    <% if can? :update, @note %>
+    <li class="li-e-n-index"><%= link_to 'Edit', edit_note_path(@note), :class => 'link-e-n-index' %></li>
+    <% end %>
+    <% if can? :destroy, @note %>
+    <li class="li-d-n-index"><%= link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
+    <% end %>
+    <li class="li-s-n-index"><%= link_to 'Save', @note, :class => 'link-s-n-index' %></li>
+  </ul>
+  
+  
+  <!-- COMMENTS -->
+  
+  <ul>
+    <% @note.comments.each do |comment| %>    
+    <div class="comment">
+      <div class="comment-row-1">      
+        <li class="li-comment-user-profile-image"><%= image_tag comment.user.profile_image.url, :class => 'comment-user-profile-img' %></li>
+        <li class="li-comment-user-first-name"><%= comment.user.first_name %></li>   
+        <li class="li-comment-user-last-name"><%= comment.user.last_name %></li>   
+        <li class="li-comment-user-username"><%= comment.user.username %></li>   
+        <li class="li-comment-content"><%= comment.content %></li>
+      </div>
+        <li class="li-comment-created-at"><%= comment.created_at %></li>
+      
+      <div class="comment-row-3">
+        <li class="li-edit-comment">
+          <% if can? :update, comment %>
+            <%= link_to 'Edit', edit_comment_path(comment) %>
+          <% end %>
+        </li>
+        <li class="li-destroy-comment">
+          <% if can? :destroy, comment %>
+            <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </li>
+      </div>
     </div>
+    <% end %>
+  </ul>
+
+  
+  <%= form_for(@comment) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+        <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.hidden_field :note_id, value: @note.id %>
+
+    <div class="field-new-comment">
+      <%= f.text_field :content, placeholder: "New comment", :class => 'new-comment-text-area' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
   <% end %>
 
-  <%= f.hidden_field :note_id, value: @note.id %>
+  <p>
+    <strong>Tags:</strong>
+    <%= @note.tags.map{ |tag| "##{tag.title}"}.join(" ") %>
+  </p>
 
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</button>
 
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+</body>
