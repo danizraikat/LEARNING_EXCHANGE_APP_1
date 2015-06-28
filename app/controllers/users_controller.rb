@@ -13,7 +13,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  
+  def favourite
+    @user = User.find(params[:id]) 
+    @note = Note.new 
+    @notes = Note.all
+    @users = User.all
+  end
 
   
 

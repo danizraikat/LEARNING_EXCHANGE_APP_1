@@ -48,12 +48,12 @@
       <div class="comment-row-3">
         <li class="li-edit-comment">
           <% if can? :update, comment %>
-            <%= link_to 'Edit', edit_comment_path(comment) %>
+            <%= link_to 'Edit', edit_comment_path(comment), :class => 'link-edit-comment' %>
           <% end %>
         </li>
         <li class="li-destroy-comment">
           <% if can? :destroy, comment %>
-            <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-destroy-comment' %>
           <% end %>
         </li>
       </div>

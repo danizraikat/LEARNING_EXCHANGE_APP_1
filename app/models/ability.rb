@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user
     can [:update, :destroy], [Note, Comment], :user_id => user.id 
+    can [:update, :destroy], [User], :id => user.id 
   end
 
 
