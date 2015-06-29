@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :tags
   resources :notes
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-  resources :users, only: [:index, :show]          
+  resources :users, only: [:index, :show] 
+  resources :favorite_notes 
 end
 
 

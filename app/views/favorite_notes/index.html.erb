@@ -1,0 +1,13 @@
+<h1> Hello </h1>
+
+  <ul>
+    <% @notes.reverse_each do |note| %> 
+      <li><%= note.content %></li>
+    <% end %>
+  </ul>
+
+  <% @users.each do |user| %>
+    <li><%= user.username %></li>
+  <% end %>
+
+

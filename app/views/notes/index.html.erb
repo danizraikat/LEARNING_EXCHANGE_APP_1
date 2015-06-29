@@ -1,4 +1,4 @@
-<body class="body-notes-index">    
+<body class="body-notes-index">     
   <!-- <p id="notice"><%= notice %></p> -->
 
   <div class="notes-index-left">
@@ -62,13 +62,20 @@
             
             <ul class="ul-row4-notes-index">
               <li class="li-c-n-index"><%= link_to 'Comment', note, :class => 'link-c-n-index' %></li>
+              
               <% if can? :update, note %>
-              <li class="li-e-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'link-e-n-index' %></li>
+                <li class="li-e-n-index"><%= link_to 'Edit', edit_note_path(note), :class => 'link-e-n-index' %></li>
               <% end %>
+              
               <% if can? :destroy, note %>
-              <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
+                <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
               <% end %>
-              <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
+              
+              <% unless current_user.favorite_notes.exists?(id: @note.id) %>
+                <li class="li-s-n-index"><%= link_to 'Save', favorite_note_path(id: @note.id), :class => 'link-s-n-index' %></li>
+              <% else %>
+                <li class="li-s-n-index"><%= link_to 'Remove from favorites', favorite_note_path(@note), method: :delete %></li>
+              <% end %>
             </ul>
          
         </button>
