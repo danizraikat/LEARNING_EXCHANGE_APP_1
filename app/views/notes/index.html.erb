@@ -71,9 +71,8 @@
                 <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
               <% end %>
               
-              
-              <li class="li-s-n-index"><%= link_to note.favorite_by(@user), user, method: :post, :class => 'link-s-n-index' %></li>
-              
+              <li class="li-s-n-index"><%= link_to 'Save', favorite_notes_path, method: :post, :class => 'link-s-n-index' %></li>                
+
             </ul>
          
         </button>
