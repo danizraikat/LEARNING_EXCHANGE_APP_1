@@ -10,7 +10,7 @@ class FavoriteNotesController < ApplicationController
       @notes = current_user.favorite_notes
       @users = User.all
     end
-    
+
     def create
       if Favorite.create(favorited: @note, user: current_user)
         # redirect_to @note, notice: 'Project has been favorited'

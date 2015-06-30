@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_many :favorites
+  has_many :favorites, as: :favorited
   has_many :favorite_notes, through: :favorites, source: :favorited, source_type: 'Note'
     
   mount_uploader :profile_image, ProfileImageUploader
