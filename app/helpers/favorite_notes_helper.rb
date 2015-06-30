@@ -1,2 +1,0 @@
-module FavoriteNotesHelper
-end

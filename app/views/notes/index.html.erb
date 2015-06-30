@@ -71,11 +71,9 @@
                 <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
               <% end %>
               
-              <% unless current_user.favorite_notes.exists?(id: @note.id) %>
-                <li class="li-s-n-index"><%= link_to 'Save', favorite_note_path(id: @note.id), :class => 'link-s-n-index' %></li>
-              <% else %>
-                <li class="li-s-n-index"><%= link_to 'Remove from favorites', favorite_note_path(@note), method: :delete %></li>
-              <% end %>
+              
+              <li class="li-s-n-index"><%= link_to note.favorite_by(@user), user, method: :post, :class => 'link-s-n-index' %></li>
+              
             </ul>
          
         </button>
