@@ -5,6 +5,8 @@ class FavoritesController < ApplicationController
   # GET /favorites.json
   def index
     @favorites = Favorite.all
+    @users = User.all  
+    @user = User.new  
   end
 
   # GET /favorites/1
@@ -69,6 +71,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:user_id)
+      params.require(:favorite).permit(:user_id, :title)
     end
 end

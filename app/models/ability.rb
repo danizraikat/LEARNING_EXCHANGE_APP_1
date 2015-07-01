@@ -6,6 +6,7 @@ class Ability
     can [:update, :destroy], [Note, Comment], :user_id => user.id 
     can [:update, :destroy], [User], :id => user.id 
     can [:read], [Comment], :user_id => user.id 
+    
   end
 
 

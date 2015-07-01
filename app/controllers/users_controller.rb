@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @note = Note.new 
     @notes = Note.all
     @users = User.all
+    @favorite = Favorite.new
   end
 
   

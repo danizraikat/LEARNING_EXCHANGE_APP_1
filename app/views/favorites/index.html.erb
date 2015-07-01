@@ -1,19 +1,11 @@
+<body class="body-notes-index">     
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Favorites</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+  
   <tbody>
     <% @favorites.each do |favorite| %>
       <tr>
-        <td><%= favorite.user_id %></td>
+        
+        <td><%= favorite.title %></td>
         <td><%= link_to 'Show', favorite %></td>
         <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
         <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +17,48 @@
 <br>
 
 <%= link_to 'New Favorite', new_favorite_path %>
+</body>
+
+
+<%= form_for(@favorite) do |f| %>
+  
+  <% if @favorite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@favorite.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @favorite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+  <div class="actions">
+    <%v= f.submit %>
+  </div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

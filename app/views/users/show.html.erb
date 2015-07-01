@@ -120,5 +120,30 @@
     <% end %>
   </ul>
 </div>
+
+
+<%= form_for(@favorite) do |f| %>
+  
+  <% if @favorite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@favorite.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @favorite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-new-comment">
+    <%= f.text_field :title, placeholder: "New favorite album", :class => 'new-comment-text-area' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
    
 </body>
