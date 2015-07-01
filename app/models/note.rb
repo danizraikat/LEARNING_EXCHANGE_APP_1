@@ -3,7 +3,7 @@ class Note < ActiveRecord::Base
   belongs_to :user
   has_many :comments 
   has_and_belongs_to_many :tags
-  belongs_to :favorites
+  # belongs_to :favorites
 
   #VALIDATIONS
   validates :user, presence: true
