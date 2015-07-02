@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/about'           
   resources :comments
-  resources :tags
   resources :notes
+  resources :tags
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users, only: [:index, :show] 
-  resources :favorite_notes    
+  resources :favorite_notes do
+    resources :notes
+  end     
 end
 
 

@@ -32,7 +32,11 @@ class NotesController < ApplicationController
     @note = current_user.notes.new(note_params)
 
     note_tags = params[:note].delete(:tags)
-    @note.tag_ids = note_tags   
+    @note.tag_ids = note_tags    
+    
+    note_favorites = params[:note].delete(:favorites)
+    @note.favorite_ids = note_favorites    
+
 
     respond_to do |format|
       if @note.save

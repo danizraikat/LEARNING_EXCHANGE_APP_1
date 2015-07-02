@@ -4,17 +4,26 @@
   
   <% @favorites.each do |favorite| %>
       
-      <li><%= favorite.title %></li>
-      <li><%= link_to 'Show', favorite %></li>
-      <li><%= link_to 'Edit', edit_favorite_path(favorite) %></li>
-      <li><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-   
+      <% if can? :read, favorite %>
+        <li><%= favorite.title %></li>
+        <li><%= favorite.user.username %></li>
+        <li><%= link_to 'Show', favorite %></li>
+        
+        <% if can? :update, favorite %>
+          <li><%= link_to 'Edit', edit_favorite_path(favorite) %></li>
+        <% end %>
+        
+        <% if can? :destroy, favorite %>
+          <li><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
+      <% end %>
+      <br>                         
+
   <% end %>
   
 
 <br>
 
-<%= link_to 'New Favorite', new_favorite_path %>
 </body>
 
 <%= form_for(@favorite) do |f| %>
