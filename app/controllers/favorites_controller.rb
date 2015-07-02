@@ -3,8 +3,9 @@ class FavoritesController < ApplicationController
 
   # GET /favorites
   # GET /favorites.json
-  def index
+  def index 
     @favorites = Favorite.all
+    @favorite = Favorite.new
     @users = User.all  
     @user = User.new  
   end
@@ -12,6 +13,7 @@ class FavoritesController < ApplicationController
   # GET /favorites/1
   # GET /favorites/1.json
   def show
+
   end
 
   # GET /favorites/new
@@ -26,7 +28,7 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.new(favorite_params)
+    @favorite = current_user.favorites.new(favorite_params)
 
     respond_to do |format|
       if @favorite.save
