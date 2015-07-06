@@ -21,7 +21,7 @@
         </div>
 
         <div class="tags-and-submit">
-          <!-- <div class="field-new-note-tags">
+          <div class="field-new-note-tags">
             <%= label_tag :tags %>
             <p class="tag-notes-index">
               <% Tag.all.each do |tag| %>
@@ -32,7 +32,7 @@
                 
               <% end %>
             </p>
-          </div> -->
+          </div> 
           <div class="actions-create-note">     
             <%= f.submit %>
           </div>
@@ -71,7 +71,7 @@
                 <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
               <% end %>
               
-              <li class="li-s-n-index"><%= link_to 'Save', favorites_path(note_id: @note), method: :post, :class => 'link-s-n-index' %></li>                
+              <li class="li-s-n-index"><%= link_to 'Save', favorites_path, :class => 'link-s-n-index' %></li>                
 
             </ul>
          

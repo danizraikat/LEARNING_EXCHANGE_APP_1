@@ -5,6 +5,7 @@
   <% @favorites.each do |favorite| %>
       
       <% if can? :read, favorite %>
+        
         <li><%= favorite.title %></li>
         <li><%= favorite.user.username %></li>
         <li><%= link_to 'Show', favorite %></li>
@@ -16,6 +17,9 @@
         <% if can? :destroy, favorite %>
           <li><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <% end %>
+
+        <li><%= link_to 'Add to album', favorite, method: :post%>
+
       <% end %>
       <br>                         
 
