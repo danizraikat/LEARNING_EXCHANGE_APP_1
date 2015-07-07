@@ -1,10 +1,21 @@
 <body class="body-notes-show">
-
+ 
   <p>
     <li><%= @favorite.title %></li>
     <li><%= @favorite.user.username %></li>
   </p>
 
+  <ul>
+    <% @favorite.notes.each do |note| %>
+      <li><%= note.user.username %></li>          
+      <li><%= note.content %></li>
+      <li><%= note.created_at %></li>
+      <li><%= link_to 'Show', note %></li>
+      <li><%= link_to 'Edit', edit_note_path(note) %></li>
+      <li><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <br>
+    <% end %>
+  </ul>
   
 
   <%= link_to 'Edit', edit_favorite_path(@favorite) %> |
