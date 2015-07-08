@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  #match is same as get
+
+  match "/favourites/add/:note_id", :controller => "favorites", :action => "pick_album", :as => "add_favorite", via: [:get]
+  match "/favourites/add/:album_id/:note_id", :controller => "favorites", :action => "add_to_album", :as => "add_favorite_to_album", via: [:get]
+
   resources :favorites
   # root "notes#index"  
   root 'static_pages#home'
@@ -8,9 +14,7 @@ Rails.application.routes.draw do
   resources :tags
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users, only: [:index, :show] 
-  resources :favorite_notes do
-    resources :notes
-  end     
+  resources :notes
 end
 
 

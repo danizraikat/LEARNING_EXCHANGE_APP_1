@@ -12,6 +12,8 @@ gem 'rmagick'
 
 gem 'cancancan', '~> 1.10' 
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 
 

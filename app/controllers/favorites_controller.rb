@@ -41,8 +41,21 @@ class FavoritesController < ApplicationController
     end
   end
 
+  # def pick_album
+  #   @note_id = params[:note_id]
+  #   @albums = Album.all
+
+
+  #   # in view
+  #   @albums.each do |album|
+  #    link_to add_favorite_to_album_path(@note_id, album.id)
+  #   end
+
+  # end
+
   # PATCH/PUT /favorites/1
   # PATCH/PUT /favorites/1.json
+  
   def update
     respond_to do |format|
       if @favorite.update(favorite_params)
@@ -73,6 +86,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:user_id, :title, :favorite_id)
+      params.require(:favorite).permit(:user_id, :title)
     end
 end
