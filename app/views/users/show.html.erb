@@ -147,19 +147,16 @@
 <% end %>
 
 <h2> Liked Notes </h2>
-<% @notes.reverse_each do |note| %>  
-  <% if note.liked_by current_user %>
-    <p class="p-notes-content"><%= note.content %></p>    
-  <% end %>
-<% end %>   
 
-<h2> Disliked Notes </h2>
-<% @notes.reverse_each do |note| %>  
-  <% if note.disliked_by current_user %>
-    <p class="p-notes-content"><%= note.content %></p>    
-  <% end %>
+<% @user.find_liked_items.each do |note| %>
+  <p class="p-notes-content"><%= note.content %></p>      
 <% end %> 
 
+<h2> DisLiked Notes </h2>
+
+<% @user.find_disliked_items.each do |note| %>
+  <p class="p-notes-content"><%= note.content %></p>      
+<% end %> 
 
 </body>
 
