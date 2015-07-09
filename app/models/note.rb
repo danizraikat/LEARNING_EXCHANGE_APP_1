@@ -11,6 +11,11 @@ class Note < ActiveRecord::Base
   validates :content, length: { maximum: 1000,
     too_long: "%{count} characters is the maximum allowed" }
   
-  acts_as_votable       
+  acts_as_votable  
+
+  def number_of_likes
+    get_likes.size
+  end
+       
 end
 

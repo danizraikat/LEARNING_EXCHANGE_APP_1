@@ -1,3 +1,4 @@
+# a MIGRATION is the way to UPDATE the DATABASE     
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     
   before_action :authenticate_user!
 
+
   def index 
     @users = User.all
   end
@@ -12,10 +13,20 @@ class UsersController < ApplicationController
     @notes = Note.all
     @users = User.all
     @favorite = Favorite.new
-    @favorites = Favorite.all
+    @favorites = Favorite.all  
   end
 
-  
+  def upvote
+    @note = Note.find(params[:id])
+    @note.liked_by current_user
+    redirect_to @note
+  end
+
+  def downvote
+    @note = Note.find(params[:id])
+    @note.disliked_by current_user
+    redirect_to @note
+  end
 
   private 
     def user_params

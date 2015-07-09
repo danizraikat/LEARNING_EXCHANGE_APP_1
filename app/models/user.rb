@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
   has_many :notes
   has_many :comments  
   has_many :identities, dependent: :destroy   
-  has_many :favorites           
+  has_many :favorites      
+
+  acts_as_voter      
   
 
   #VALIDATIONS 
