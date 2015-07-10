@@ -24,6 +24,7 @@
 .field-new-note, .new-note-text-area {
   width: 400px;
   background-color: #E6E6E6;
+  border: 0px;
 }
 
 .new-note {
@@ -44,6 +45,11 @@
 
 .actions-create-note {
   margin: 10px; 
+}
+
+.new-note-submit-button {
+  background-color: #E6E6E6; 
+  border: 0px;
 }
 
 

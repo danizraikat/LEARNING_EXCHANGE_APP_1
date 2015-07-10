@@ -23,8 +23,10 @@
   <p class="li-user-bio"><%= @user.bio %></p>             
 </div>
 
+<!-- NOTES -->
 <div class="notes-index-left">
   
+  <!-- NEW NOTE -->   
   <div class="new-note-index">
     <%= form_for(@note) do |f| %>
       <% if @note.errors.any? %>
@@ -43,7 +45,7 @@
         <%= f.text_area :content, placeholder: "New note", :class => 'new-note-text-area' %>   
       </div>
 
-      <div class="tags-and-submit">
+      <div class="tags-and-submit">    
         <!-- <div class="field-new-note-tags">
           <%= label_tag :tags %>
           <p class="tag-notes-index">
@@ -57,7 +59,7 @@
           </p>
         </div> -->
         <div class="actions-create-note">     
-          <%= f.submit %>
+          <%= f.submit :class => 'new-note-submit-button' %>
         </div>
       </div>
     <% end %>
@@ -99,6 +101,9 @@
     <% end %>
   </ul>
   <br>
+  
+  <p><%= link_to 'Saved Notes', controller: 'users', action: 'saved', id: @user %></p> 
+
 </div>  
 
 <div class="notes-index-right">
@@ -121,7 +126,7 @@
   </ul>
 </div>
 
-<p><%= link_to 'Saved Notes', controller: 'users', action: 'saved', id: @user %></p> 
+
 
 </body>
 
