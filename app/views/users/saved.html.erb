@@ -64,7 +64,7 @@
   </div>
 
   <ul class="notes-index-ul">
-    <% @user.notes.reverse_each do |note| %>  
+    <% @user.find_liked_items.reverse_each do |note| %>
   
       <button class="notes-index-button">                       
 

@@ -13,9 +13,16 @@ class UsersController < ApplicationController
     @notes = Note.all
     @users = User.all
     @favorite = Favorite.new
-    @favorites = Favorite.all  
+    @favorites = Favorite.all   
   end
-
+  
+  def saved
+    @user = User.find(params[:id]) 
+    @note = Note.new 
+    @notes = Note.all
+    @users = User.all
+  end
+  
   def upvote
     @note = Note.find(params[:id])
     @note.liked_by current_user
