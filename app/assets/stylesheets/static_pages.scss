@@ -47,7 +47,7 @@ body {
   margin-left: 5%;
 } 
 
-.home-login-b, .home-signup-b {
+.home-login-b, .home-signup-b, .home-browse-b {
   
   border: 3px solid #FFFFFF; 
   margin-top: 5%;
@@ -57,7 +57,11 @@ body {
   color: #FFFFFF;
 }
 
-.home-login-b {
+.home-browse-b {
+  margin-left: 15%;
+}
+
+.home-login-b, .home-browse-b {
   background-color: #00B85C;  
 }
 
@@ -65,13 +69,30 @@ body {
   background-color: #00B85C;  
 }
 
-.home-login-b:hover {
+.home-login-b:hover, .home-browse-b:hover {
   background-color: #00A352;
 }
 
 .home-signup-b:hover {
   background-color: #00A352;  
 }
+
+.home-login-b:visited, .home-browse-b:visited {
+  background-color: #00B85C;  
+}
+
+.home-signup-b:visited {
+  background-color: #00B85C;  
+}
+
+.home-login-b:active, .home-browse-b:active {
+  background-color: #00B85C;  
+}
+
+.home-signup-b:active {
+  background-color: #00B85C;  
+}
+
 
 .home-login, .home-signup {
   color: #FFFFFF;
@@ -85,6 +106,16 @@ body {
   background-color: transparent;
 }
 
+// --ABOUT PAGE--
+.about-main {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+  .about-bundle {
+    color: #FFFFFF;
+    font-family: Courier;
+  }
 
 
 

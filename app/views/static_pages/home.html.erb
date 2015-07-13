@@ -2,7 +2,7 @@
 
   <div class="div-logo-home"> 
     <h1 class="home-h1"> BUNDLE </h1>
-    <h3 class="home-h3-tagline"> Tagline </h3>
+    <h3 class="home-h3-tagline"> is for developers </h3>
   </div>
 
   <div class="div-intro-home">    
@@ -13,14 +13,13 @@
     </p>
     
     <div class="home-buttons">
-      <% if user_signed_in %>  
+      <% if user_signed_in? %>  
+        <button class="home-browse-b"><%= link_to "Browse notes", "/notes", :class => 'home-login' %></button>        
+      <% else %>
         <button class="home-login-b"><%= link_to "Login", new_user_session_path(), :class => 'home-login' %></button>
         <button class="home-signup-b"><%= link_to "Join us", new_user_registration_path(), :class => 'home-signup' %></button>   
-      <% else %>
-        <button class="home-login-b"><%= link_to "Browse notes", notes, :class => 'home-login' %></button>        
       <% end %>
     </div>
-  </div>
-
+  </div>                
 
 </body>

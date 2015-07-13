@@ -99,6 +99,10 @@
     <% end %>
   </ul>
   <br>
+  
+  <!-- BACK TO THE USER SHOW PAGE -->
+  <p><%= link_to 'Back to user', @user %></p> 
+
 </div>  
 
 <div class="notes-index-right">
@@ -120,8 +124,6 @@
     <% end %>
   </ul>
 </div>
-
-<p><%= link_to 'Saved Notes', controller: 'users', action: 'saved', id: @user %></p> 
 
 </body>
 
