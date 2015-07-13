@@ -24,7 +24,9 @@
 .field-new-note, .new-note-text-area {
   width: 400px;
   background-color: #E6E6E6;
+  
   border: 0px;
+
 }
 
 .new-note {
@@ -52,6 +54,11 @@
   border: 0px;
 }
 
+.new-note-submit-button:hover {
+  background-color: #E6E6E6; 
+  border: 1px solid;
+  border-color: #4C4C4C; 
+}
 
 //NOTES LIST
 .notes-index-ul {
@@ -63,6 +70,7 @@
   list-style-type: none; 
   margin: 10px;
   background-color: #E6E6E6;
+  
   padding: 0px;
   // border: 1px solid #CCCC52;
 }
@@ -141,6 +149,7 @@
     text-align: left; 
     // background-color: #CCCCCC;
     background-color: #E6E6E6;
+    
     color: #1A1A1A; 
     padding: 8px;
     padding-left: 8px; 
@@ -301,7 +310,8 @@ img {
 
   .link-users-username-n-index:hover {
     background-color: transparent; 
-    color: #6685E0;    
+    color: #6685E0;  
+    text-decoration: underline;  
   }
 
   .link-users-username-n-index:active {

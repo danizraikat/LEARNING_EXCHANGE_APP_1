@@ -27,7 +27,12 @@
     <% if can? :destroy, @note %>
     <li class="li-d-n-index"><%= link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
     <% end %>
-    <li class="li-s-n-index"><%= link_to 'Save', @note, :class => 'link-s-n-index' %></li>
+    
+    <li class="li-s-n-index"><%= link_to 'Save', like_note_path(@note), method: :put, :class => 'link-s-n-index' %></li>
+    <%= @note.get_likes.size %>
+    <li class="li-s-n-index"><%= link_to 'Unsave', dislike_note_path(@note), method: :put, :class => 'link-s-n-index' %></li>
+    <%= @note.get_dislikes.size %>         
+
   </ul>
   
   
@@ -83,16 +88,13 @@
     </div>
 
     <div class="actions">
-      <%v= f.submit %>
+      <%= f.submit %>
     </div>
-
-  <% end %>
-
-  <p>
-    <strong>Tags:</strong>
-    <%= @note.tags.map{ |tag| "##{tag.title}"}.join(" ") %>
-  </p>
+    <div class="actions">
+      <%= link_to 'Back to Notes', notes_url %>
+    </div>
+  <% end %>  
 
 </button>
-<li><%= link_to 'Back to Notes', notes_url %>
+
 </body>

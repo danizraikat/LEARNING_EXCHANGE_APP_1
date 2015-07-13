@@ -1,0 +1,31 @@
+.body-user-edit, .body-user-login, .body-user-register {
+  background-color: #CCCCCC;
+}
+
+.field {
+  width: 1000px;
+  margin-left: 10%;
+}
+
+.field-email-edit {
+  width: 1000px;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.actions-udate-account, .unhappy, .cancel-account, .actions-login, .devise-shared-links, .actions-register {
+  margin-left: 10%;
+}
+
+.unhappy {
+  margin-top: 20px;
+  color: red;
+}
+
+.cancel-account, .devise-shared-links {
+  margin-bottom: 5%;
+}
+
+.devise-shared-links {
+  margin-top: 10px;
+}
