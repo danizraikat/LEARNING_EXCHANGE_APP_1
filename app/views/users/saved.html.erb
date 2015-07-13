@@ -57,7 +57,7 @@
           </p>
         </div> -->
         <div class="actions-create-note">     
-          <%= f.submit %>
+          <%= f.submit :class => 'new-note-submit-button' %>
         </div>
       </div>
     <% end %>
@@ -98,10 +98,7 @@
   
     <% end %>
   </ul>
-  <br>
-  
-  <!-- BACK TO THE USER SHOW PAGE -->
-  <p><%= link_to 'Back to user', @user %></p> 
+  <br> 
 
 </div>  
 

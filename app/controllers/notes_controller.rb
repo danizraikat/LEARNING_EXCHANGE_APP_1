@@ -8,7 +8,6 @@ class NotesController < ApplicationController
     @note = Note.new   
     @users = User.all  
     @user = User.new
-
   end
 
   # GET /notes/1

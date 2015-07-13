@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # match "/favourites/add/:note_id", :controller => "favorites", :action => "pick_album", :as => "add_favorite", via: [:get]
   # match "/favourites/add/:album_id/:note_id", :controller => "favorites", :action => "add_to_album", :as => "add_favorite_to_album", via: [:get]
 
-  get '/users/saved-notes/:id', :controller => 'users', :action => 'saved'   
+  get '/users/saved-notes/:id', :controller => 'users', :action => 'saved', as: "saved"   
 
   resources :favorites
   # root "notes#index"  
