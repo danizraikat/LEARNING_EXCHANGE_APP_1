@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150708130005) do
 
-#a MODEL represents a TABLE in the DATABASE 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "note_id"

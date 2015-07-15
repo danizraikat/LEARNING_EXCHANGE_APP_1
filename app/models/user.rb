@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   #role (admin, user by default) (SCOPE 1 OR 2) 
 
   # validates :email, :username, uniqueness: true  
-  validates :bio, length: { maximum: 500,
+  validates :bio, length: { maximum: 285, 
     too_long: "%{count} characters is the maximum allowed" }
   # validates :email => true  
 
