@@ -75,9 +75,9 @@
             
               
               <li class="li-s-n-index"><%= link_to 'Save', like_note_path(note), method: :put, :class => 'link-s-n-index' %></li>
-              <%= note.get_likes.size %>
+              <li class="number-of-likes"><%= note.get_likes.size %></li>
               <li class="li-s-n-index"><%= link_to 'Unsave', dislike_note_path(note), method: :put, :class => 'link-s-n-index' %></li>
-              <%= note.get_dislikes.size %>
+              
 
 
               <!-- link_to 'like', like_idea_path(@idea), method: :put, class: "button tiny" -->
@@ -93,7 +93,7 @@
 
   <div class="notes-index-right">
 
-    <li class="bundle-users">Bundle has</li>
+    <!-- <li class="bundle-users">Bundle has</li> -->
   
     <ul class="ul-users-n-index">
       <% @users.each do |user| %>   

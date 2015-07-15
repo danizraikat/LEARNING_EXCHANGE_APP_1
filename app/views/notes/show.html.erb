@@ -28,9 +28,8 @@
     <% end %>
     
     <li class="li-s-n-index"><%= link_to 'Save', like_note_path(@note), method: :put, :class => 'link-s-n-index' %></li>
-    <%= @note.get_likes.size %>
+    <li class="number-of-likes"><%= @note.get_likes.size %></li>
     <li class="li-s-n-index"><%= link_to 'Unsave', dislike_note_path(@note), method: :put, :class => 'link-s-n-index' %></li>
-    <%= @note.get_dislikes.size %>         
 
   </ul>
   
@@ -57,7 +56,7 @@
         </li>
         <li class="li-destroy-comment">
           <% if can? :destroy, comment %>
-            <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-destroy-comment' %>
+            <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-destroy-comment' %>
           <% end %>
         </li>
       </div>
@@ -90,7 +89,7 @@
       <%= f.submit %>
     </div>
     <div class="actions">
-      <%= link_to 'Back to Notes', notes_url %>
+      <%= link_to 'Back to Notes', notes_url, :class => 'back-notes-show' %>
     </div>
   <% end %>  
 

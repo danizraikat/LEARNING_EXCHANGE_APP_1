@@ -1,8 +1,8 @@
 <body class="body-user-show">
 
-<!-- USER PROFILE -->
-<div class="user-profile">
-  
+<!-- USER PROFILE --> 
+<!-- LEFT -->
+<div class="user-profile">  
   <div class="user-profile-image">
     <li class="li-user-profile-img"><%= image_tag @user.profile_image.url, :class => 'user-profile-img' %></li>    
   </div>
@@ -19,6 +19,7 @@
     </ul>
   </div>
 </div>
+<!-- RIGHT -->
 <div class="user-bio">
   <p class="li-user-bio"><%= @user.bio %></p>             
 </div>
@@ -94,6 +95,8 @@
             <li class="li-d-n-index"><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-d-n-index' %></li>
             <% end %>
             <li class="li-s-n-index"><%= link_to 'Save', note, :class => 'link-s-n-index' %></li>
+            <li class="number-of-likes"><%= note.get_likes.size %></li>
+            <li class="li-s-n-index"><%= link_to 'Unsave', dislike_note_path(note), method: :put, :class => 'link-s-n-index' %></li>
           </ul>
        
       </button>
@@ -105,9 +108,11 @@
   
 </div>  
 
+<!-- USER LIST -->
+
 <div class="notes-index-right">
 
-  <li class="bundle-users">Bundle has</li>
+  <!-- <li class="bundle-users">Bundle has</li> -->
 
   <ul class="ul-users-n-index">
     <% @users.each do |user| %>   

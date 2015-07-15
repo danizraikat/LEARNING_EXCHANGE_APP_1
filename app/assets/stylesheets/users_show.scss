@@ -6,7 +6,8 @@
   height: 150px;    
   background-color: #E6E6E6;
   // background-color: #CCCCCC;
-  margin-left: 5%;      
+  margin-left: 4.5%;      
+  margin-right: 0%;      
   margin-top: 3%;  
   width: 600px;  
   float: left;
@@ -22,64 +23,64 @@
       height: 150px;
     }
 
-.li-user-first-name {
-  font-family: Lucida Grande; 
-  display: inline;
-  margin-left: 20px;
-  line-height: 48px;
-  font-size: 24px;
-}
+  .li-user-first-name {
+    font-family: Lucida Grande; 
+    display: inline;
+    margin-left: 20px;
+    line-height: 48px;
+    font-size: 24px;
+  }
 
-.li-user-last-name, .li-user-username {
-  font-family: Lucida Grande; 
-  display: inline;
-  margin-left: 10px;
-  line-height: 36px;
-  font-size: 24px;
-}
+  .li-user-last-name, .li-user-username {
+    font-family: Lucida Grande; 
+    display: inline;
+    margin-left: 10px;
+    line-height: 36px;
+    font-size: 24px;
+  }
 
-.li-user-first-name, .li-user-last-name {
-  // color: #FFFFFF; 
-  color: #4C4C4C;
-  font-size: 22px;
-}
+  .li-user-first-name, .li-user-last-name {
+    // color: #FFFFFF; 
+    color: #4C4C4C;
+    font-size: 22px;
+  }
 
-.li-user-username {
-  color: #6685E0;
-  font-size: 16px;
-}
+  .li-user-username {
+    color: #6685E0;
+    font-size: 16px;
+  }
 
-.li-user-location {
-  color: #666666;
-  font-family: Lucida Grande; 
-  font-size: 17px;
-  margin-left: 153px;
-  margin-top: -4px;
-  width: 400px;
-}
+  .li-user-location {
+    color: #666666;
+    font-family: Lucida Grande; 
+    font-size: 17px;
+    margin-left: 153px;
+    margin-top: -4px;
+    width: 400px;
+  }
 
-.li-user-website {
-  margin-top: 16px;
-}
-.li-user-website, .li-user-github, .li-user-twitter {
-  font-family: Courier; 
-  list-style-type: none;
-  font-size: 11px;
-  // color: #FFFFFF;
-  color: #4C4C4C;
-  margin-left: 153px;
-  width: 400px;
-}
+  .li-user-website {
+    margin-top: 16px;
+  }
+  .li-user-website, .li-user-github, .li-user-twitter {
+    font-family: Courier; 
+    list-style-type: none;
+    font-size: 11px;
+    // color: #FFFFFF;
+    color: #4C4C4C;
+    margin-left: 153px;
+    width: 400px;
+  }
 
-.user-bio {
+.user-bio { 
   height: 150px;
   // background-color: #FFD119;
   // background-color: #E6E65C;
   background-color: #666666;   
-  
+  margin-left: 0%;
   margin-right: 5%;      
   margin-top: 3%;  
-  width: 551px;    
+  width: 557px;    
   float: right;
 }
   .li-user-bio {
