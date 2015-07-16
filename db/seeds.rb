@@ -5,6 +5,7 @@ admin1 = User.create!(username: "admin1", email: "admin@admin.com", password: "p
 # user3 = User.create!(username: "alexpchin", email: "alex@alex.com", password: "password", first_name: "Alex", last_name: "Chin", bio: "Happy to be the THIRD user of this website")
 
 note1 = Note.create!(user_id: 1, content: "This is a Note. We use notes to communicate our discoveries about code. You can write anything you want here but try to keep its content relevant to the community and concise.")
+
 # note2 = Note.create!(user_id: 2, content: "Today I learnt about CSS")
 # note3 = Note.create!(user_id: 3, content: "Today I learnt about JS")   
 
