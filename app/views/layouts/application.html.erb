@@ -30,7 +30,7 @@
           <ul class="right">
             <% if user_signed_in? %>
               <li><%= image_tag current_user.profile_image.url, :class => 'image-nav-bar' %></li>
-              <li class="nav-bar-first-name"><%= link_to current_user.first_name, user_path(current_user)%></a>
+              <li class="nav-bar-first-name"><%= link_to current_user.first_name, user_path(current_user)%></li>      
               <li><%= link_to "Saved Notes", saved_path(current_user) %></li>  
               <li><%= link_to "Edit", edit_user_registration_path(current_user) %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
