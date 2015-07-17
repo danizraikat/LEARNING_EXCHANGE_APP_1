@@ -2,10 +2,12 @@ class UsersController < ApplicationController
     
   before_action :authenticate_user!
 
+  # /users
   def index 
     @users = User.all
   end
 
+  # /users/:id
   def show
     @user = User.find(params[:id]) 
     @note = Note.new 
@@ -15,6 +17,7 @@ class UsersController < ApplicationController
     @favorites = Favorite.all   
   end
   
+  # /users/saved-notes/:id
   def saved
     @user = User.find(params[:id]) 
     @note = Note.new 
